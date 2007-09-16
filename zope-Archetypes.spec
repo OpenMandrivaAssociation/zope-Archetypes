@@ -2,7 +2,7 @@
 %define product archetypes
 %define name    zope-%{Product}
 %define version 1.5.2
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
@@ -23,14 +23,10 @@ Requires:   zope-BTreeFolder2
 Requires:   lynx
 Requires:   pdftohtml
 Requires:   rtf-converter
-Provides:   zope-validation == %{version}
-Provides:   zope-generator == %{version}
-Provides:   zope-PortalTransforms == %{version}
-Provides:   zope-MimetypesRegistry == %{version}
-Obsoletes:  zope-validation
-Obsoletes:  zope-generator
-Obsoletes:  zope-PortalTransforms
-Obsoletes:  zope-MimetypesRegistry
+Provides:   zope-validation = %{version}-%{release}
+Provides:   zope-PortalTransforms = %{version}-%{release}
+Provides:   zope-MimetypesRegistry = %{version}-%{release}
+Provides:   zope-Marshall = %{version}-%{release}
 BuildArch:  noarch
 BuildRoot:  %{_tmppath}/%{name}-%{version}
 
