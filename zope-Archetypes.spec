@@ -1,37 +1,38 @@
-%define product     Archetypes
-%define realVersion 1.4.2-final
-%define release     1
+%define Product Archetypes
+%define product archetypes
+%define name    zope-%{Product}
+%define version 1.5.2
+%define release %mkrel 1
 
-%define version %(echo  %{realVersion} | sed -e 's/-/./g')
-%define sVersion %(echo %{realVersion} | cut -d- -f1)
 %define zope_minver     2.7
-
 %define zope_home       %{_prefix}/lib/zope
 %define software_home   %{zope_home}/lib/python
 
-Summary:        Developers framework for deploying content types with Zope and Plone
-Name:           zope-%{product}
-Version:        %{version}
-Release:        %mkrel %{release}
-License:        GPL
-Group:          System/Servers
-Source:         http://plone.org/products/archetypes/releases/%{sVersion}/Archetypes-%{realVersion}-Bundle.tar.bz2
-URL:            http://plone.org/products/archetypes/
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
-BuildArch:      noarch
-Requires:       zope >= %{zope_minver}
-Requires:       zope-CMF
-Requires:       python-imaging
-Requires:       zope-BTreeFolder2
-Requires:       lynx
-Requires:       pdftohtml
-Requires:       rtf-converter
-
-Provides:       zope-validation == %{version}
-Provides:       zope-generator == %{version}
-Provides:       zope-PortalTransforms == %{version}
-Provides:       zope-MimetypesRegistry == %{version}
-Obsoletes:      zope-validation, zope-generator, zope-PortalTransforms, zope-MimetypesRegistry
+Name:		%{name}
+Version:	%{version}
+Release:	%{release}
+Summary:    Developers framework for deploying content types with Zope and Plone
+License:    GPL
+Group:      System/Servers
+URL:        http://plone.org/products/%{product}
+Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-%{version}.tar.gz
+Requires:   zope >= %{zope_minver}
+Requires:   zope-CMF
+Requires:   python2.4-imaging
+Requires:   zope-BTreeFolder2
+Requires:   lynx
+Requires:   pdftohtml
+Requires:   rtf-converter
+Provides:   zope-validation == %{version}
+Provides:   zope-generator == %{version}
+Provides:   zope-PortalTransforms == %{version}
+Provides:   zope-MimetypesRegistry == %{version}
+Obsoletes:  zope-validation
+Obsoletes:  zope-generator
+Obsoletes:  zope-PortalTransforms
+Obsoletes:  zope-MimetypesRegistry
+BuildArch:  noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}
 
 %description
 A developers framework for rapidly developing and deploying rich, full 
@@ -64,7 +65,7 @@ if [ -f "%{_prefix}/bin/zopectl" ] && [ "`%{_prefix}/bin/zopectl status`" != "da
 fi
 
 %files
-%defattr(0644, root, root, 0755)
+%defattr(-,root,root)
 %{software_home}/Products/*
 
 
