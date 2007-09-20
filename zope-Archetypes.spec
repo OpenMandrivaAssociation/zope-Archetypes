@@ -2,7 +2,7 @@
 %define product archetypes
 %define name    zope-%{Product}
 %define version 1.5.2
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
@@ -19,7 +19,6 @@ Source:     http://plone.org/products/%{product}/releases/%{version}/%{Product}-
 Requires:   zope >= %{zope_minver}
 Requires:   zope-CMF
 Requires:   python2.4-imaging
-Requires:   zope-BTreeFolder2
 Requires:   lynx
 Requires:   pdftohtml
 Requires:   rtf-converter
