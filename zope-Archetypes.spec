@@ -27,7 +27,6 @@ Provides:   zope-PortalTransforms = %{version}-%{release}
 Provides:   zope-MimetypesRegistry = %{version}-%{release}
 Provides:   zope-Marshall = %{version}-%{release}
 BuildArch:  noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 A developers framework for rapidly developing and deploying rich, full 
