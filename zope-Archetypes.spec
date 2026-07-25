@@ -2,7 +2,7 @@
 %define product archetypes
 %define name    zope-%{Product}
 %define version 1.5.4
-%define release %mkrel 4
+%define release 5
 
 %define zope_minver     2.7
 %define zope_home       %{_prefix}/lib/zope
